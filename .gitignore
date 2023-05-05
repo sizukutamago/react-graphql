@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,git,visualstudiocode,webstorm+all,node,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,git,visualstudiocode,webstorm+all,node,react
 
+!tsconfig.base.json
+
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
