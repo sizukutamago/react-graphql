@@ -1,0 +1,41 @@
+{
+  "name": "@react-graphql/root",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "preinstall": "npx only-allow npm",
+    "start:front": "npm run start -w @react-graphql/front",
+    "start:api": "npm run start:dev -w @react-graphql/api",
+    "test:front": "npm test -w @react-graphql/front",
+    "test:api": "npm test -w @react-graphql/api",
+    "test": "run-p test:*",
+    "dev": "run-p start:*",
+    "fix:prettier": "prettier --write .",
+    "lint:eslint": "eslint --ext \".js,.ts,.tsx\" --ignore-path .gitignore .",
+    "fix:eslint": "npm run lint:eslint --fix"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/api",
+    "packages/front",
+    "packages/common"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.0.0",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "jest": "^29.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  }
+}

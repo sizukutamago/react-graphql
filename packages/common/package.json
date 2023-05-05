@@ -1,0 +1,13 @@
+{
+  "name": "@react-graphql/common",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "author <sizukutamago@gmail.com> (https://example.com/)",
+  "license": "UNLICENSED"
+}
