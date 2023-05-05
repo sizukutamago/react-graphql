@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
+import request from 'supertest';
 import { AppModule } from './../src/app.module';
 
 describe('AppController (e2e)', () => {
@@ -15,10 +15,30 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  afterAll(async () => {
+    await app.close();
+  });
+
+  it('レスポンスが', () => {
+    const res = request(app.getHttpServer())
+      .post('/graphql')
+      .send({
+        query: `{
+          getTasks {
+            id
+            name
+            dueDate
+          }
+        }`,
+      });
+    expect(res).toBe(200);
+    // expect((res) => {
+    //   expect(res.body.data.getCat).toEqual({
+    //     name: 'Terra',
+    //     age: 5,
+    //     breed: 'Siberian',
+    //     id: '2',
+    //   });
+    // });
   });
 });
